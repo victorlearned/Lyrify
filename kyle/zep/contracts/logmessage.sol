@@ -12,15 +12,15 @@ contract LyricfyToken is StandardToken {
 
 	event Log(address _from, string message);
 
+	function LyricfyToken() public {
+		totalSupply_ = INITIAL_SUPPLY;
+		balance[msg.sender] = INITIAL_SUPPLY;
+	}
+
 	function logMessage(address _from, string _message) public {
 		owner = msg.sender;
 		message = _message;
 		emit Log(owner, message);
-	}
-
-	function LyricfyToken() public {
-		totalSupply_ = INITIAL_SUPPLY;
-		balance[msg.sender] = INITIAL_SUPPLY;
 	}
 }
 
