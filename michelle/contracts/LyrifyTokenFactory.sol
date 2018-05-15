@@ -45,9 +45,9 @@ contract LyrifyTokenFactory is Ownable {
         for (uint i = 0; i < lyrifyTokens.length; i++) {
             if (lyrifyTokensToOwner[i] == _owner) {
                 result[counter] = i;
+                counter++;
             }
         }
         return result;
     }
-
 }

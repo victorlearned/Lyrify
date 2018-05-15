@@ -67,7 +67,7 @@ class App extends Component {
         });
         return this.state.lyrifyInstance;
       }).then((result) => {
-        // return this.state.lyrifyInstance.getLyrifyTokensByOwner.call(accounts[0]);
+        // return this.state.lyrifyInstance.getLyrifyTokensByOwner.call();
         return this.state.lyrifyInstance.getLyrifyTokensByOwner(accounts[0]);
       }).then((result) => {
 console.log("owned tokens:", result);
@@ -81,6 +81,10 @@ console.log("owned tokens:", result);
           });;*/
       })
     });
+  }
+
+  getLyrifyTokensByOwner(account) {
+    return this.state.lyrifyInstance.getLyrifyTokensByOwner(account).call();
   }
 
   render() {
