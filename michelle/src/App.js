@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import LyrifyTokenFactory from '../build/contracts/LyrifyTokenFactory.json';
-import LyrifyOwnership from '../build/contracts/LyrifyOwnership.json';
+import LyrifyTokenOwnership from '../build/contracts/LyrifyTokenOwnership.json';
 import getWeb3 from './utils/getWeb3'
 
 import './css/oswald.css'
@@ -48,7 +48,7 @@ class App extends Component {
      */
 
     const contract = require('truffle-contract');
-    const lyrifyContract = contract(LyrifyOwnership);
+    const lyrifyContract = contract(LyrifyTokenOwnership);
     lyrifyContract.setProvider(this.state.web3.currentProvider);
     // const simpleStorage = contract(SimpleStorageContract)
     // simpleStorage.setProvider(this.state.web3.currentProvider)
@@ -142,6 +142,7 @@ class EssayForm extends React.Component {
   handleSubmit(event) {
     alert('An essay was submitted: ' + JSON.stringify(this.state));
     event.preventDefault();
+console.log("lyrify instance??", this.props.account);
 
     return this.props.lyrifyInstance.registerToken(this.state.ownerName, this.state.songTitle, this.state.lyrics, {
       from: this.props.account,
