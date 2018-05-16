@@ -68,7 +68,6 @@ class App extends Component {
         });
         return this.state.lyrifyInstance;
       }).then((result) => {
-        // return this.state.lyrifyInstance.getLyrifyTokensByOwner(accounts[0]);
         return this.state.lyrifyInstance.ownerLyrifyTokenCount(this.state.account)
       }).then((result) => {
 console.log("result", result);

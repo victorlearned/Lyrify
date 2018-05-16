@@ -50,4 +50,8 @@ contract LyrifyTokenFactory is Ownable {
         }
         return result;
     }
+
+    function getLyrifyTokenCount(address _owner) external view returns (uint[]) {
+        return lyrifyTokensToOwner[_owner].length;
+    }
 }
