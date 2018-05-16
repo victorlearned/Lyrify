@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import LyrifyTokenFactory from '../build/contracts/LyrifyTokenFactory.json';
+// import LyrifyTokenFactory from '../build/contracts/LyrifyTokenFactory.json';
+import LyrifyOwnership from '../build/contracts/LyrifyOwnership.json';
 import getWeb3 from './utils/getWeb3'
 
 import './css/oswald.css'
@@ -47,7 +48,7 @@ class App extends Component {
      */
 
     const contract = require('truffle-contract');
-    const lyrifyContract = contract(LyrifyTokenFactory);
+    const lyrifyContract = contract(LyrifyOwnership);
     lyrifyContract.setProvider(this.state.web3.currentProvider);
     // const simpleStorage = contract(SimpleStorageContract)
     // simpleStorage.setProvider(this.state.web3.currentProvider)
