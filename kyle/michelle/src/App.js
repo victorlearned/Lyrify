@@ -70,7 +70,7 @@ class App extends Component {
       }).then((result) => {
         return this.state.lyrifyInstance.ownerLyrifyTokenCount(this.state.account)
       }).then((result) => {
-console.log("result", result);
+        console.log("result", result);
         this.setState({
           ownedTokens: JSON.stringify(result)
         });
@@ -138,7 +138,7 @@ class EssayForm extends React.Component {
   handleSubmit(event) {
     alert('An essay was submitted: ' + JSON.stringify(this.state));
     event.preventDefault();
-console.log("lyrify instance??", this.props.account);
+    console.log("lyricfy instance??", this.props.account);
 
     return this.props.lyrifyInstance.registerToken(this.state.ownerName, this.state.songTitle, this.state.lyrics, {
       from: this.props.account,
