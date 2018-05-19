@@ -22,10 +22,22 @@ Install dependencies
 npm i
 ```
 
+Install testrpc
+
+```
+npm install -g ethereumjs-testrpc
+```
+
 Run testrpc in a terminal window
 
 ```
 testrpc
+```
+
+Install truffle
+
+```
+npm install -g truffle
 ```
 
 To compile and migrate the Solidity contracts, run the following commands in another terminal window:
