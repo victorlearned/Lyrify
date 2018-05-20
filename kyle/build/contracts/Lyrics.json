@@ -43,14 +43,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610360806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806368aebe8a14610051578063de6cb14c1461014b575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101b7565b60405180806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561010e5780820151818401526020810190506100f3565b50505050905090810190601f16801561013b5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561015757600080fd5b506101606102a6565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101a3578082015181840152602081019050610188565b505050509050019250505060405180910390f35b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102635780601f1061023857610100808354040283529160200191610263565b820191906000526020600020905b81548152906001019060200180831161024657829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16905083565b6060600180548060200260200160405190810160405280929190818152602001828054801561032a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102e0575b50505050509050905600a165627a7a723058200d410d1ccb8fbd4fc1349fd8028e5993ecd2ec3fd016af51f9eded18a1d6dbe30029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806368aebe8a14610051578063de6cb14c1461014b575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101b7565b60405180806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561010e5780820151818401526020810190506100f3565b50505050905090810190601f16801561013b5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561015757600080fd5b506101606102a6565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101a3578082015181840152602081019050610188565b505050509050019250505060405180910390f35b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102635780601f1061023857610100808354040283529160200191610263565b820191906000526020600020905b81548152906001019060200180831161024657829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16905083565b6060600180548060200260200160405190810160405280929190818152602001828054801561032a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102e0575b50505050509050905600a165627a7a723058200d410d1ccb8fbd4fc1349fd8028e5993ecd2ec3fd016af51f9eded18a1d6dbe30029",
-  "sourceMap": "26:282:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:282:1;;;;;;;",
-  "deployedSourceMap": "26:282:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;144:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:48:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;144:48:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;220:80;;8:9:-1;5:2;;;30:1;27;20:12;5:2;220:80:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;220:80:1;;;;;;;;;;;;;;;;;144:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;220:80::-;261:9;289:4;282:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;220:80;:::o",
-  "source": "pragma solidity ^0.4.10;\n\ncontract Lyrics {\n\n    struct LyricPost {\n        string lyrics;\n        address sender;\n        bool set;\n    }\n\n    mapping (address => LyricPost) public LyricPosts;\n\n    address[] keys;\n\n    function getKeyArray() constant returns (address[]) {\n        return keys;\n    }     \n\n}",
-  "sourcePath": "/home/kyleyasumiishi/test/spuds/kyle/contracts/Lyrics.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b50610360806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806368aebe8a14610051578063de6cb14c1461014b575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101b7565b60405180806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561010e5780820151818401526020810190506100f3565b50505050905090810190601f16801561013b5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561015757600080fd5b506101606102a6565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101a3578082015181840152602081019050610188565b505050509050019250505060405180910390f35b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102635780601f1061023857610100808354040283529160200191610263565b820191906000526020600020905b81548152906001019060200180831161024657829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16905083565b6060600180548060200260200160405190810160405280929190818152602001828054801561032a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102e0575b50505050509050905600a165627a7a72305820a5e071a7e40cb79eb80a45a0490b7bbdf85fe2632275e66dac6236689045bebe0029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806368aebe8a14610051578063de6cb14c1461014b575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101b7565b60405180806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561010e5780820151818401526020810190506100f3565b50505050905090810190601f16801561013b5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561015757600080fd5b506101606102a6565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101a3578082015181840152602081019050610188565b505050509050019250505060405180910390f35b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102635780601f1061023857610100808354040283529160200191610263565b820191906000526020600020905b81548152906001019060200180831161024657829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16905083565b6060600180548060200260200160405190810160405280929190818152602001828054801561032a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102e0575b50505050509050905600a165627a7a72305820a5e071a7e40cb79eb80a45a0490b7bbdf85fe2632275e66dac6236689045bebe0029",
+  "sourceMap": "166:282:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;166:282:1;;;;;;;",
+  "deployedSourceMap": "166:282:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;284:48:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;284:48:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;360:80;;8:9:-1;5:2;;;30:1;27;20:12;5:2;360:80:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;360:80:1;;;;;;;;;;;;;;;;;284:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;360:80::-;401:9;429:4;422:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;360:80;:::o",
+  "source": "///////////////////////////////////////////////\n//=> FOR EXPERIMENTAL PURPOSES ONLY - kyle\n///////////////////////////////////////////////\n\npragma solidity ^0.4.10;\n\ncontract Lyrics {\n\n    struct LyricPost {\n        string lyrics;\n        address sender;\n        bool set;\n    }\n\n    mapping (address => LyricPost) public LyricPosts;\n\n    address[] keys;\n\n    function getKeyArray() constant returns (address[]) {\n        return keys;\n    }     \n\n}\n",
+  "sourcePath": "/Users/kyleyasumiishi/Projects/spuds/spuds/kyle/contracts/Lyrics.sol",
   "ast": {
-    "absolutePath": "/home/kyleyasumiishi/test/spuds/kyle/contracts/Lyrics.sol",
+    "absolutePath": "/Users/kyleyasumiishi/Projects/spuds/spuds/kyle/contracts/Lyrics.sol",
     "exportedSymbols": {
       "Lyrics": [
         77
@@ -68,7 +68,7 @@
           ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:1"
+        "src": "140:24:1"
       },
       {
         "baseContracts": [],
@@ -93,7 +93,7 @@
                 "name": "lyrics",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "76:13:1",
+                "src": "216:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -104,7 +104,7 @@
                   "id": 54,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "76:6:1",
+                  "src": "216:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -119,7 +119,7 @@
                 "name": "sender",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "99:14:1",
+                "src": "239:14:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -130,7 +130,7 @@
                   "id": 56,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "99:7:1",
+                  "src": "239:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -145,7 +145,7 @@
                 "name": "set",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "123:8:1",
+                "src": "263:8:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -156,7 +156,7 @@
                   "id": 58,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "123:4:1",
+                  "src": "263:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -169,7 +169,7 @@
             "name": "LyricPost",
             "nodeType": "StructDefinition",
             "scope": 77,
-            "src": "49:89:1",
+            "src": "189:89:1",
             "visibility": "public"
           },
           {
@@ -178,7 +178,7 @@
             "name": "LyricPosts",
             "nodeType": "VariableDeclaration",
             "scope": 77,
-            "src": "144:48:1",
+            "src": "284:48:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -191,14 +191,14 @@
                 "id": 61,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "153:7:1",
+                "src": "293:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "144:30:1",
+              "src": "284:30:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LyricPost_$60_storage_$",
                 "typeString": "mapping(address => struct Lyrics.LyricPost)"
@@ -209,7 +209,7 @@
                 "name": "LyricPost",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 60,
-                "src": "164:9:1",
+                "src": "304:9:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_LyricPost_$60_storage_ptr",
                   "typeString": "struct Lyrics.LyricPost"
@@ -225,7 +225,7 @@
             "name": "keys",
             "nodeType": "VariableDeclaration",
             "scope": 77,
-            "src": "199:14:1",
+            "src": "339:14:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -237,7 +237,7 @@
                 "id": 65,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "199:7:1",
+                "src": "339:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -246,7 +246,7 @@
               "id": 66,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "199:9:1",
+              "src": "339:9:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -259,7 +259,7 @@
             "body": {
               "id": 75,
               "nodeType": "Block",
-              "src": "272:28:1",
+              "src": "412:28:1",
               "statements": [
                 {
                   "expression": {
@@ -269,7 +269,7 @@
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 67,
-                    "src": "289:4:1",
+                    "src": "429:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
@@ -278,7 +278,7 @@
                   "functionReturnParameters": 72,
                   "id": 74,
                   "nodeType": "Return",
-                  "src": "282:11:1"
+                  "src": "422:11:1"
                 }
               ]
             },
@@ -294,7 +294,7 @@
               "id": 68,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "240:2:1"
+              "src": "380:2:1"
             },
             "payable": false,
             "returnParameters": {
@@ -307,7 +307,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 76,
-                  "src": "261:9:1",
+                  "src": "401:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -319,7 +319,7 @@
                       "id": 69,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "261:7:1",
+                      "src": "401:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -328,7 +328,7 @@
                     "id": 70,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "261:9:1",
+                    "src": "401:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -338,23 +338,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "260:11:1"
+              "src": "400:11:1"
             },
             "scope": 77,
-            "src": "220:80:1",
+            "src": "360:80:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 78,
-        "src": "26:282:1"
+        "src": "166:282:1"
       }
     ],
-    "src": "0:308:1"
+    "src": "140:309:1"
   },
   "legacyAST": {
-    "absolutePath": "/home/kyleyasumiishi/test/spuds/kyle/contracts/Lyrics.sol",
+    "absolutePath": "/Users/kyleyasumiishi/Projects/spuds/spuds/kyle/contracts/Lyrics.sol",
     "exportedSymbols": {
       "Lyrics": [
         77
@@ -372,7 +372,7 @@
           ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:1"
+        "src": "140:24:1"
       },
       {
         "baseContracts": [],
@@ -397,7 +397,7 @@
                 "name": "lyrics",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "76:13:1",
+                "src": "216:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -408,7 +408,7 @@
                   "id": 54,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "76:6:1",
+                  "src": "216:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -423,7 +423,7 @@
                 "name": "sender",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "99:14:1",
+                "src": "239:14:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -434,7 +434,7 @@
                   "id": 56,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "99:7:1",
+                  "src": "239:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -449,7 +449,7 @@
                 "name": "set",
                 "nodeType": "VariableDeclaration",
                 "scope": 60,
-                "src": "123:8:1",
+                "src": "263:8:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -460,7 +460,7 @@
                   "id": 58,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "123:4:1",
+                  "src": "263:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -473,7 +473,7 @@
             "name": "LyricPost",
             "nodeType": "StructDefinition",
             "scope": 77,
-            "src": "49:89:1",
+            "src": "189:89:1",
             "visibility": "public"
           },
           {
@@ -482,7 +482,7 @@
             "name": "LyricPosts",
             "nodeType": "VariableDeclaration",
             "scope": 77,
-            "src": "144:48:1",
+            "src": "284:48:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -495,14 +495,14 @@
                 "id": 61,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "153:7:1",
+                "src": "293:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "144:30:1",
+              "src": "284:30:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LyricPost_$60_storage_$",
                 "typeString": "mapping(address => struct Lyrics.LyricPost)"
@@ -513,7 +513,7 @@
                 "name": "LyricPost",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 60,
-                "src": "164:9:1",
+                "src": "304:9:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_LyricPost_$60_storage_ptr",
                   "typeString": "struct Lyrics.LyricPost"
@@ -529,7 +529,7 @@
             "name": "keys",
             "nodeType": "VariableDeclaration",
             "scope": 77,
-            "src": "199:14:1",
+            "src": "339:14:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -541,7 +541,7 @@
                 "id": 65,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "199:7:1",
+                "src": "339:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -550,7 +550,7 @@
               "id": 66,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "199:9:1",
+              "src": "339:9:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -563,7 +563,7 @@
             "body": {
               "id": 75,
               "nodeType": "Block",
-              "src": "272:28:1",
+              "src": "412:28:1",
               "statements": [
                 {
                   "expression": {
@@ -573,7 +573,7 @@
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 67,
-                    "src": "289:4:1",
+                    "src": "429:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
@@ -582,7 +582,7 @@
                   "functionReturnParameters": 72,
                   "id": 74,
                   "nodeType": "Return",
-                  "src": "282:11:1"
+                  "src": "422:11:1"
                 }
               ]
             },
@@ -598,7 +598,7 @@
               "id": 68,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "240:2:1"
+              "src": "380:2:1"
             },
             "payable": false,
             "returnParameters": {
@@ -611,7 +611,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 76,
-                  "src": "261:9:1",
+                  "src": "401:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -623,7 +623,7 @@
                       "id": 69,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "261:7:1",
+                      "src": "401:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -632,7 +632,7 @@
                     "id": 70,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "261:9:1",
+                    "src": "401:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -642,20 +642,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "260:11:1"
+              "src": "400:11:1"
             },
             "scope": 77,
-            "src": "220:80:1",
+            "src": "360:80:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 78,
-        "src": "26:282:1"
+        "src": "166:282:1"
       }
     ],
-    "src": "0:308:1"
+    "src": "140:309:1"
   },
   "compiler": {
     "name": "solc",
@@ -663,5 +663,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-19T01:18:01.092Z"
+  "updatedAt": "2018-05-20T19:56:53.291Z"
 }
