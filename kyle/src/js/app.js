@@ -93,20 +93,13 @@ function submitHandler(event) {
     return lyrifyInstance.registerToken(submission.ownerName, submission.songTitle, submission.lyrics, {
         from: account,
         value: web3.toWei(0.004, "ether"), // hardcoded value
-        gas: 500000
+        gas: 50000
     }).then((result) => {
         console.log("registering token:", result);
-    })
-    
-    
-    // .then((error, result) => {
-    //     if (error) {
-    //         console.log(error);
-    //     } else {
-    //         alert('Token has been registered!');
-    //         console.log(result);
-    //     }
-    // });
+        let submissionConfirmation = JSON.stringify(result.logs[0].args);
+        let transactionHash = JSON.stringify(result.tx)
+        alert("registered token: " + submissionConfirmation + transactionHash);
+    });
     console.log(lyrifyInstance);
 };
 
