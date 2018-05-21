@@ -185,6 +185,23 @@ section.login-section {
   color: rgb(12, 97, 33);
 }
 
+
+/*
+* Success Section
+*/
+
+.card {
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-subtitle, .card-text {
+    text-align: left;
+    font-size: 0.75em;
+}
+
 /* ----------------------------------------------- */
 
 ::-moz-selection {
@@ -816,4 +833,17 @@ ul.social-buttons li a {
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
+}
+
+#display-success{
+  background-color: #212529;
+  background-image: url("../img/blockchain.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding-bottom: 100px;
+}
+
+#backToHome {
+    margin-bottom: 20px;
 }

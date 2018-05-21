@@ -19,6 +19,7 @@ git clone https://github.com/victorlearned/spuds.git
 Install dependencies
 
 ```
+# cd into root directory
 npm i
 ```
 
@@ -42,7 +43,7 @@ npm install -g truffle
 
 To compile and migrate the Solidity contracts, run the following commands in another terminal window:
 
-```
+```bash
 truffle compile
 truffle migrate --reset
 ```

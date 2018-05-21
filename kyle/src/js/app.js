@@ -23,14 +23,43 @@ function componentWillMount() {
         window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     }
     instantiateContract();
-};
+}
+
+/*
+ * Function to display the resulted succesful transaction after registering your lyrics
+ */
+function displayLyrifySuccess() {
+    let transactionHash = "";
+    let currentSong = [];
+    for (let i = 0; i < window.localStorage.length; i++ ){
+        let storageKey = window.localStorage.key(i);
+        let storageItem = window.localStorage.getItem(storageKey);
+        let storageItemParsed = JSON.parse(storageItem);
+        let id = Number(storageItemParsed.id);
+        if (id === window.localStorage.length) {
+            currentSong.push(window.localStorage.getItem(window.localStorage.key(i)));
+            transactionHash = storageKey;
+        }
+    }
+    console.log("transactionHash: ", transactionHash);
+    console.log("localStorage: ", window.localStorage);
+    console.log("currentSong: ", currentSong);
+    console.log("Submission: ", JSON.parse(currentSong[0]));
+    let newSong = JSON.parse(currentSong[0]);
+    transactionHash = JSON.parse(transactionHash);
+    console.log("Submission: ", newSong.songName);
+    document.getElementById("songtitle").innerHTML = 'Title: ' + newSong.songName;
+    document.getElementById("songlyrics").innerHTML = 'Lyrics: ' + newSong.lyrics;
+    document.getElementById("author").innerHTML = 'Author: ' + newSong.ownerName;
+    document.getElementById("hash").innerHTML = 'Hash: ' + transactionHash;
+}
 
 /*
  * Instantiates contract and updates global variables.
  */
 function instantiateContract() {
     // Instantiate contract and set its web3 provider. This lets us access its functions.
-    $.getJSON("LyrifyTokenOwnership.json", function(data) {
+    $.getJSON("LyrifyTokenOwnership.json", function (data) {
         const LyrifyTokenOwnership = data;
         const lyrifyContract = TruffleContract(LyrifyTokenOwnership);
         lyrifyContract.setProvider(web3.currentProvider);
@@ -45,7 +74,7 @@ function instantiateContract() {
         web3.eth.defaultAccount = web3.eth.accounts[0];
     
         // Create instance of contract at its deployed address (https://github.com/trufflesuite/truffle-contract).
-        lyrifyContract.deployed().then(function(instance) {
+        lyrifyContract.deployed().then(function (instance) {
             lyrifyInstance = instance;
             getTokens().then(result => {
                 console.log("allTokens: ", result);
@@ -65,7 +94,7 @@ function instantiateContract() {
         //     ownedTokens = JSON.stringify(result);
         // });
     });
-};
+}
 
 /*
  * Get tokens by account owner.
@@ -78,6 +107,8 @@ function getLyrifyTokensByOwner(account) {
  * Event handler for submit button that registers token with submission info.
  */
 function submitHandler(event) {
+    console.log("The lyfif Instance: ", lyrifyInstance);
+
     submission.ownerName = document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value;
     submission.email = document.getElementById("email").value;
     submission.songTitle = document.getElementById("title").value;
@@ -98,11 +129,16 @@ function registerToken() {
         console.log("registered token: ", result);
         let submissionConfirmation = JSON.stringify(result.logs[0].args);
         let transactionHash = JSON.stringify(result.tx)
+        window.localStorage.setItem(transactionHash, submissionConfirmation);
+        window.location.href = '/success.html';
         alert("registered token: " + submissionConfirmation + transactionHash);
         getTokens().then(result => {
             console.log("allTokens: ", result);
             allTokens = result;
         });
+    }).catch(err => {
+        console.warn("error in registerToken: ", err);
+        throw err;
     });
 }
 

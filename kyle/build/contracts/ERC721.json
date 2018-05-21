@@ -1384,5 +1384,9 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
+<<<<<<< HEAD
   "updatedAt": "2018-05-21T16:41:25.319Z"
+=======
+  "updatedAt": "2018-05-21T19:38:08.824Z"
+>>>>>>> nigel-test
 }
