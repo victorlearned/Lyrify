@@ -37,7 +37,8 @@ function displayLyrifySuccess() {
         let storageItemParsed = JSON.parse(storageItem);
         let id = Number(storageItemParsed.id);
         if (id === window.localStorage.length) {
-            currentSong.push(window.localStorage.getItem(window.localStorage.key(i)));
+            // currentSong.push(window.localStorage.getItem(window.localStorage.key(i)));
+            currentSong.push(storageItem);
             transactionHash = storageKey;
         }
     }
@@ -110,7 +111,6 @@ function submitHandler(event) {
     console.log("The lyfif Instance: ", lyrifyInstance);
 
     submission.ownerName = document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value;
-    submission.email = document.getElementById("email").value;
     submission.songTitle = document.getElementById("title").value;
     submission.lyrics = document.getElementById("lyrics").value;
     event.preventDefault();
@@ -121,7 +121,7 @@ function submitHandler(event) {
  * Registers token, alerts user, and logs array of all tokens to console.
  */
 function registerToken() {
-    lyrifyInstance.registerToken(submission.email, submission.ownerName, submission.songTitle, submission.lyrics, {
+    lyrifyInstance.registerToken(submission.ownerName, submission.songTitle, submission.lyrics, {
         from: account,
         value: web3.toWei(0.004, "ether"), // hardcoded value
         gas: 999999 // need to optimize this
@@ -164,10 +164,9 @@ function getTokens() {
             for (let i = 0; i < tokensIndexList.length; i++) {
                 promises.push(getLyrifyTokenDetails(i).then(token => {
                     const translatedToken = {
-                        email: token[0],
-                        name: token[1],
-                        songName: token[2],
-                        lyrics: token[3]
+                        name: token[0],
+                        songName: token[1],
+                        lyrics: token[2]
                     }
                     return Promise.resolve(translatedToken);
                 }));
