@@ -87,9 +87,14 @@ function submitHandler(event) {
     submission.lyrics = document.getElementById("lyrics").value;
     alert('Your lyrics were submitted! ' + JSON.stringify(submission));
     event.preventDefault();
+    return registerToken();
+};
 
-    // Registers token, alerts user, and logs array of all tokens.
-    return lyrifyInstance.registerToken(submission.email, submission.ownerName, submission.songTitle, submission.lyrics, {
+/*
+ * Registers token, alerts user, and logs array of all tokens to console.
+ */
+function registerToken() {
+    lyrifyInstance.registerToken(submission.email, submission.ownerName, submission.songTitle, submission.lyrics, {
         from: account,
         value: web3.toWei(0.004, "ether"), // hardcoded value
         gas: 999999 // need to optimize this
@@ -100,12 +105,10 @@ function submitHandler(event) {
         alert("registered token: " + submissionConfirmation + transactionHash);
         getTokens().then(result => {
             console.log("alltokens", result);
-
             allTokens = result;
         });
     });
-    console.log(lyrifyInstance);
-};
+}
 
 /*
  * Helper function that returns a promise whose resulting value contains token details in an array.
