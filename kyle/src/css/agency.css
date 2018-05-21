@@ -817,3 +817,11 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
 }
+
+#display-success{
+  background-color: #212529;
+  background-image: url("../img/blockchain.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
