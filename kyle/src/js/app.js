@@ -29,29 +29,16 @@ function componentWillMount() {
  * Function to display the resulted succesful transaction after registering your lyrics
  */
 function displayLyrifySuccess() {
-    let transactionHash = "";
-    let currentSong = [];
-    for (let i = 0; i < window.localStorage.length; i++ ){
-        let storageKey = window.localStorage.key(i);
-        let storageItem = window.localStorage.getItem(storageKey);
-        let storageItemParsed = JSON.parse(storageItem);
-        let id = Number(storageItemParsed.id);
-        if (id === window.localStorage.length) {
-            // currentSong.push(window.localStorage.getItem(window.localStorage.key(i)));
-            currentSong.push(storageItem);
-            transactionHash = storageKey;
-        }
-    }
+    let transactionHash = JSON.parse(window.localStorage.key(0));
+    let currentSong = JSON.parse(window.localStorage.getItem(window.localStorage.key(0)));
+    
     console.log("transactionHash: ", transactionHash);
-    console.log("localStorage: ", window.localStorage);
     console.log("currentSong: ", currentSong);
-    console.log("Submission: ", JSON.parse(currentSong[0]));
-    let newSong = JSON.parse(currentSong[0]);
-    transactionHash = JSON.parse(transactionHash);
-    console.log("Submission: ", newSong.songName);
-    document.getElementById("songtitle").innerHTML = 'Title: ' + newSong.songName;
-    document.getElementById("songlyrics").innerHTML = 'Lyrics: ' + newSong.lyrics;
-    document.getElementById("author").innerHTML = 'Author: ' + newSong.ownerName;
+    console.log("localStorage: ", window.localStorage);
+
+    document.getElementById("songtitle").innerHTML = 'Title: ' + currentSong.songName;
+    document.getElementById("songlyrics").innerHTML = 'Lyrics: ' + currentSong.lyrics;
+    document.getElementById("author").innerHTML = 'Author: ' + currentSong.ownerName;
     document.getElementById("hash").innerHTML = 'Hash: ' + transactionHash;
 }
 
@@ -129,6 +116,7 @@ function registerToken() {
         console.log("registered token: ", result);
         let submissionConfirmation = JSON.stringify(result.logs[0].args);
         let transactionHash = JSON.stringify(result.tx)
+        window.localStorage.clear();
         window.localStorage.setItem(transactionHash, submissionConfirmation);
         window.location.href = '/success.html';
         alert("registered token: " + submissionConfirmation + transactionHash);
