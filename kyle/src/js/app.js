@@ -26,7 +26,7 @@ function componentWillMount() {
 }
 
 /*
- * Function to display the resulted succesful transaction after registering your lyrics
+ * Function to display the resulted succesful transaction after registering your lyrics.
  */
 function displayLyrifySuccess() {
     let transactionHash = JSON.parse(window.localStorage.key(0));
@@ -95,8 +95,6 @@ function getLyrifyTokensByOwner(account) {
  * Event handler for submit button that registers token with submission info.
  */
 function submitHandler(event) {
-    console.log("The lyfif Instance: ", lyrifyInstance);
-
     submission.ownerName = document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value;
     submission.songTitle = document.getElementById("title").value;
     submission.lyrics = document.getElementById("lyrics").value;
@@ -105,7 +103,7 @@ function submitHandler(event) {
 };
 
 /*
- * Registers token, alerts user, and logs array of all tokens to console.
+ * Registers token and redirects user to success page.
  */
 function registerToken() {
     lyrifyInstance.registerToken(submission.ownerName, submission.songTitle, submission.lyrics, {
@@ -116,9 +114,12 @@ function registerToken() {
         console.log("registered token: ", result);
         let submissionConfirmation = JSON.stringify(result.logs[0].args);
         let transactionHash = JSON.stringify(result.tx)
+        
+        // Clears localStorage so success page doesn't accidentally display previously registered tokens.
         window.localStorage.clear();
         window.localStorage.setItem(transactionHash, submissionConfirmation);
         window.location.href = '/success.html';
+
         alert("registered token: " + submissionConfirmation + transactionHash);
         getTokens().then(result => {
             console.log("allTokens: ", result);
