@@ -50,6 +50,11 @@ function instantiateContract() {
         // Create instance of contract at its deployed address (https://github.com/trufflesuite/truffle-contract).
         lyrifyContract.deployed().then(function(instance) {
             lyrifyInstance = instance;
+            getTokens().then(result => {
+                console.log("alltokens", result);
+
+                allTokens = result;
+            }); 
         });
 
         ///////////////////////////////////////////////////////////////////
@@ -70,12 +75,7 @@ function instantiateContract() {
  * Get tokens by account owner.
  */
 function getLyrifyTokensByOwner(account) {
-
-    ///////////////////////////////////////////////////////////////////
-    //=> TODO: Implement getLyrifyTokensByOwner
-    ///////////////////////////////////////////////////////////////////
-
-    return lyrifyInstance.getLyrifyTokensByOwner(account).call();
+    return lyrifyInstance.getLyrifyTokensByOwner(account);
 }
 
 /*
@@ -83,17 +83,17 @@ function getLyrifyTokensByOwner(account) {
  */
 function submitHandler(event) {
     submission.ownerName = document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value;
+    submission.email = document.getElementById("email").value;
     submission.songTitle = document.getElementById("title").value;
     submission.lyrics = document.getElementById("lyrics").value;
     alert('Your lyrics were submitted! ' + JSON.stringify(submission));
     event.preventDefault();
-    console.log("lyrify instance??", account);
 
 
-    return lyrifyInstance.registerToken(submission.ownerName, submission.songTitle, submission.lyrics, {
+    return lyrifyInstance.registerToken(submission.email, submission.ownerName, submission.songTitle, submission.lyrics, {
         from: account,
         value: web3.toWei(0.004, "ether"), // hardcoded value
-        gas: 50000
+        gas: 999999 // need to optimize this
     }).then((result) => {
         console.log("registering token:", result);
         let submissionConfirmation = JSON.stringify(result.logs[0].args);
@@ -103,6 +103,30 @@ function submitHandler(event) {
     console.log(lyrifyInstance);
 };
 
+function getLyrifyTokenDetails(id) {
+    return lyrifyInstance.lyrifyTokens(id);
+}
 
-
-
+// List of all tokens ever
+function getTokens() {
+    // The following are not filtered by account owner WHATSOEVER...
+    // But we can fake this right...
+    let tokens = [];
+    return getLyrifyTokensByOwner(account)
+        .then(tokensIndexList => { // TODO: fix this...something in the contract is wrong
+            console.log("Owned tokens list", tokensIndexList);
+            const promises = [];
+            for (let i = 0; i < tokensIndexList.length; i++) {
+                promises.push(getLyrifyTokenDetails(i).then(token => {
+                    const translatedToken = {
+                        email: token[0],
+                        name: token[1],
+                        songName: token[2],
+                        lyrics: token[3]
+                    }
+                    return Promise.resolve(translatedToken);
+                }));
+            }
+            return Promise.all(promises);
+        })
+}
