@@ -27,22 +27,32 @@ function componentWillMount() {
 }
 
 /*
-Function to display the resulted succesful transaction after registering your lyrics
+ * Function to display the resulted succesful transaction after registering your lyrics
  */
 function displayLyrifySuccess() {
+    let transactionHash = "";
     let currentSong = [];
     for (let i = 0; i < window.localStorage.length; i++ ){
-        if(i === window.localStorage.length -1){
-            currentSong.push(window.localStorage.getItem(window.localStorage.key(i)))
+        let storageKey = window.localStorage.key(i);
+        let storageItem = window.localStorage.getItem(storageKey);
+        let storageItemParsed = JSON.parse(storageItem);
+        let id = Number(storageItemParsed.id);
+        if (id === window.localStorage.length) {
+            currentSong.push(window.localStorage.getItem(window.localStorage.key(i)));
+            transactionHash = storageKey;
         }
     }
+    console.log("transactionHash: ", transactionHash);
+    console.log("localStorage: ", window.localStorage);
+    console.log("currentSong: ", currentSong);
     console.log("Submission: ", JSON.parse(currentSong[0]));
     let newSong = JSON.parse(currentSong[0]);
+    transactionHash = JSON.parse(transactionHash);
     console.log("Submission: ", newSong.songName);
     document.getElementById("songtitle").innerHTML = 'Title: ' + newSong.songName;
-    document.getElementById("songlyrics").innerHTML = newSong.lyrics;
+    document.getElementById("songlyrics").innerHTML = 'Lyrics: ' + newSong.lyrics;
     document.getElementById("author").innerHTML = 'Author: ' + newSong.ownerName;
-    // document.getElementById("hash").innerHTML = transactionHash;
+    document.getElementById("hash").innerHTML = 'Hash: ' + transactionHash;
 }
 
 /*
