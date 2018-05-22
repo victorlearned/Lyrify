@@ -66,6 +66,7 @@ function instantiateContract() {
         // Create instance of contract at its deployed address (https://github.com/trufflesuite/truffle-contract).
         lyrifyContract.deployed().then(function (instance) {
             lyrifyInstance = instance;
+            console.log("lyrifyInstance: ", lyrifyInstance);
             getTokens().then(result => {
                 console.log("allTokens: ", result);
                 allTokens = result;
@@ -167,7 +168,6 @@ function getTokens() {
         });
 }
 
-
 function searchByID() {
     let id = document.getElementById("enterid").value;
     if (!id) {
@@ -177,13 +177,18 @@ function searchByID() {
         document.getElementById("notification").style.display = "none";
     }
     console.log(id);
+    console.log(lyrifyInstance);
+
     id = Number(id);
-    let tokenDetails = getLyrifyTokenDetails(id).then(token => {
-        const translatedToken = {
-            name: token[0],
-            songName: token[1],
-            lyrics: token[2]
-        }
-        console.log(translatedToken);
-    });
+    let tokenDetails = getLyrifyTokenDetails(id);
+    console.log(tokenDetails);
+
+    // let tokenDetails = getLyrifyTokenDetails(id).then(token => {
+    //     const translatedToken = {
+    //         name: token[0],
+    //         songName: token[1],
+    //         lyrics: token[2]
+    //     }
+    //     console.log(translatedToken);
+    // });
 }
