@@ -32,10 +32,12 @@ function displayLyrifySuccess() {
     let transactionHash = JSON.parse(window.localStorage.key(0));
     let currentSong = JSON.parse(window.localStorage.getItem(window.localStorage.key(0)));
     
+    console.log("id: ", currentSong.id);
     console.log("transactionHash: ", transactionHash);
     console.log("currentSong: ", currentSong);
     console.log("localStorage: ", window.localStorage);
 
+    document.getElementById("id").innerHTML = 'ID: ' + currentSong.id;
     document.getElementById("songtitle").innerHTML = 'Title: ' + currentSong.songName;
     document.getElementById("songlyrics").innerHTML = 'Lyrics: ' + currentSong.lyrics;
     document.getElementById("author").innerHTML = 'Author: ' + currentSong.ownerName;
@@ -113,6 +115,7 @@ function registerToken() {
     }).then((result) => {
         console.log("registered token: ", result);
         let submissionConfirmation = JSON.stringify(result.logs[0].args);
+        let id = Number(JSON.parse(submissionConfirmation).id);
         let transactionHash = JSON.stringify(result.tx)
         
         // Clears localStorage so success page doesn't accidentally display previously registered tokens.
