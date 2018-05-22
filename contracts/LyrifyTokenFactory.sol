@@ -4,11 +4,10 @@ import "./Ownable.sol";
 
 // @todo: figure out the correct fields for the copyright struct
 contract LyrifyTokenFactory is Ownable {
-    event NewLyrifyToken(uint id, string email, string ownerName, string songName, string lyrics);
+    event NewLyrifyToken(uint id, string ownerName, string songName, string lyrics);
 
     struct LyrifyToken {
         // string lastName;
-        string email;
         string ownerName;
         string songName;
         string lyrics; // @todo text is cheap, ipfs in future? 
@@ -26,18 +25,18 @@ contract LyrifyTokenFactory is Ownable {
         registrationFee = _fee;
     }
 
-    function _createToken(string _email, string _ownerName, string _songName, string _lyrics) internal {
-        uint id = lyrifyTokens.push(LyrifyToken(_email, _ownerName, _songName, _lyrics)) - 1;
+    function _createToken(string _ownerName, string _songName, string _lyrics) internal {
+        uint id = lyrifyTokens.push(LyrifyToken(_ownerName, _songName, _lyrics)) - 1;
         lyrifyTokensToOwner[id] = msg.sender;
         ownerLyrifyTokenCount[msg.sender]++;
-        emit NewLyrifyToken(id, _email, _ownerName, _songName, _lyrics);
+        emit NewLyrifyToken(id, _ownerName, _songName, _lyrics);
     }
 
     /// Anyone can call this function. Should this be updated so only the 
     /// contract creator can create this?? (to pay in USD/other sources, for example)
-    function registerToken(string _email, string _ownerName,  string _songName, string _lyrics) public payable {
+    function registerToken(string _ownerName,  string _songName, string _lyrics) public payable {
         require(msg.value == registrationFee);
-        _createToken(_email, _ownerName, _songName, _lyrics);
+        _createToken(_ownerName, _songName, _lyrics);
     }
 
     // Helper functions
