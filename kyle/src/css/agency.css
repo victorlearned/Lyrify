@@ -835,7 +835,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #fed136;
 }
 
-#display-success{
+#display-success, #search{
   background-color: #212529;
   background-image: url("../img/blockchain.jpg");
   background-repeat: no-repeat;

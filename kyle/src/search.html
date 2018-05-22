@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top" onload="displayLyrifySuccess()">
+<body id="page-top">
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -39,9 +39,9 @@
                     <!--<a class="nav-link js-scroll-trigger" href="login.html">Log In</a>-->
                 <!--</li>-->
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/">Home</a>
+                    <a class="nav-link js-scroll-trigger" href="/#about">About</a>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="search.html">Search</a>
+                    <a class="nav-link js-scroll-trigger" href="/#contact">Lyrify</a>
                 </li>
             </ul>
         </div>
@@ -58,21 +58,21 @@
 
 
 <!-- Contact -->
-<section id="display-success">
+<section id="search">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3 class="section-heading text-uppercase" style="color: #d3d3d3d3">Congratulations!</h3>
-                <h6 class="section-subheading" style="color: white"> You have successfully registered your lyrics on the blockchain</h6>
+                <h3 class="section-heading text-uppercase" style="color: white">Search Songs By ID</h3>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Your registered lyrics:</h5>
-                        <p class="card-text" id="songtitle">Title: </h6>
-                        <p class="card-text" id="author">Author: </p>
-                        <p class="card-text" id="id">ID: </p>
-                        <p class="card-text" id="hash">Song Hash ID: </p>
-                        <hr>
-                        <p class="card-text" id="songlyrics">Lyrics: </p>
+                            <h5 class="card-title" style="text-align: left; display: none;" id="notification">Hidden</h5>
+                            <h5 class="card-title" style="text-align: left">ID: <input type="text" id="enterid" value="" required></h5>
+                            <p class="card-text" id="songtitle">Title: </h6>
+                            <p class="card-text" id="author">Author: </p>
+                            <p class="card-text" id="id">ID: </p>
+                            <p class="card-text" id="hash">Song Hash ID: </p>
+                            <hr>
+                            <p class="card-text" id="songlyrics">Lyrics: </p>
                     </div>
                 </div>
             </div>
@@ -82,11 +82,7 @@
 
         <div class="row">
             <div class="col-lg-12 text-center">
-                <a href="/">
-                    <button id="backToHome" class="btn btn-primary btn-xl text-uppercase" type="button">
-                        Back Home
-                    </button>
-                </a>
+                <button id="searchbutton" class="btn btn-primary btn-xl text-uppercase" type="button" onclick="searchByID()">Search</button>
             </div>
         </div>
     </div>

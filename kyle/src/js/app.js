@@ -166,3 +166,24 @@ function getTokens() {
             return Promise.all(promises);
         });
 }
+
+
+function searchByID() {
+    let id = document.getElementById("enterid").value;
+    if (!id) {
+        document.getElementById("notification").style.display = "block";
+        document.getElementById("notification").innerHTML = 'Please enter a valid ID.';
+    } else {
+        document.getElementById("notification").style.display = "none";
+    }
+    console.log(id);
+    id = Number(id);
+    let tokenDetails = getLyrifyTokenDetails(id).then(token => {
+        const translatedToken = {
+            name: token[0],
+            songName: token[1],
+            lyrics: token[2]
+        }
+        console.log(translatedToken);
+    });
+}
